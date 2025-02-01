@@ -17,6 +17,8 @@ def main():
     calculator = Calculator()
     input_worksheet = template_workbook['Input_template']
 
+    excel_processor.recreate_empty_excel_sheets()
+
     curr_row, offsets = 2, 0
     while input_worksheet[f'A{curr_row}'].value is not None:
         print(f'Processing row {curr_row} with name {input_worksheet[f"A{curr_row}"].value}')

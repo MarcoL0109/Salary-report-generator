@@ -116,5 +116,13 @@ class Excel_Processor():
         paid_date = self.input_worksheet[f'Q{curr_row}'].value
 
         return name, basic_salary, join_date, sick_leave_taken, no_paid_leave_taken, resigning_date, resigning, annual_leave, cheque_number, paid_date
+
+
+    def recreate_empty_excel_sheets(self):
+        self.output_workbook.remove(self.output_workbook[self.sheet_name])
+        self.output_workbook.create_sheet(self.sheet_name)
+        self.output_worksheet = self.output_workbook[self.sheet_name]
+        
+        
     
     
