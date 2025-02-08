@@ -116,7 +116,7 @@ class Calculator:
         Employer_MPF_Contribution = round(temp_net_payment * 0.05, 2) if self.basic_salary < 30000 else 1500
         Employee_MPF_Contribution = 0
         date_diff = self.paid_date - self.join_date
-        if date_diff.days + 1 >= 60:
+        if date_diff.days + 1 >= 60 and temp_net_payment >= 7100:
             Employee_MPF_Contribution = round(temp_net_payment * 0.05,
                                               2) if self.basic_salary < 30000 else 1500
         return Employee_MPF_Contribution, Employer_MPF_Contribution
